@@ -11,10 +11,12 @@ brew install pure-ftpd
 * Download latest .tar.gz from http://download.pureftpd.org/pub/pure-ftpd/releases/
 * Untar and build it:
 
-    tar -xf pure-ftpd-1.0.42.tar.gz
-    cd pure-ftpd-1.0.42
-    ./configure --with-pam
-    make
+```
+tar -xf pure-ftpd-1.0.42.tar.gz
+cd pure-ftpd-1.0.42
+./configure --with-pam
+make
+```
 
 ## Prepare the Pure-FTPD server on the Mac side
 
@@ -45,17 +47,18 @@ Pure-FTPD has `--fscharset` and `--clientcharset` options, but you don't need to
 I highly recommend using (Ninite)[https://ninite.com/] to install FileZilla (and other apps).
 
 * Start FileZilla
-* FileZilla settings:
-* *	Site Manager > New Site
-* * * general
-* * * * protocol -> ftp
-* * * * logon type -> normal
-* * * charset
-* * * * force utf-8 -> tick this box
-* FileZilla main menu:
-* * transfer
-* * * default file exists action
-* * * * Downloads: Overwrite file if size differs or source file is newer
-* * * * Do *NOT* choose "resume file transfer" here. Otherwise FileZilla will pause for several seconds every 10 files or so.
-* * transfer type -> binary
-* * Preserve timestamps of transferred files -> tick this box
+* FileZilla main menu -> File -> Site Manager...
+  * New Site button
+    * General tab
+      * Protocol -> FTP (i.e. not SFTP)
+      * Logon Type -> Normal
+    * Charset tab
+      * Force UTF-8 -> Select this choice
+  * Connect button
+* FileZilla main menu -> Transfer
+  * Default file exists action...
+    * Downloads/Uploads: Overwrite file if size differs or source file is newer
+    * Do *NOT* choose "Resume file transfer" here. Otherwise FileZilla will pause for several seconds every 10 files or so.
+  * Transfer type -> Binary
+  * Preserve timestamps of transferred files -> tick this box
+* Then just transfer the files as usual!
